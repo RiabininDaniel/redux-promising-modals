@@ -1,10 +1,11 @@
 import {
     PUSH_MODAL_WINDOW, INSERT_MODAL_WINDOW, POP_MODAL_WINDOW, SHIFT_MODAL_WINDOW, CLEAR_MODAL_WINDOWS
 } from './ActionTypes';
+import { getNextType, getNextProp, getPrevType, getPrevProp} from './utils';
 
 const initialState = {
     types: [],
-    props: []
+    props: [],
 };
 
 export default (state = initialState, action) => {
@@ -34,6 +35,18 @@ export default (state = initialState, action) => {
         return {
             types: types.slice(1),
             props: props.slice(1)
+        };
+
+    case NEXT_MODAL_WINDOW:
+        return {
+            types: getNextType(types),
+            props: getNextProp(props)
+        };
+
+    case PREV_MODAL_WINDOW:
+        return {
+            types: getPrevType(types),
+            props: getPrevProp(props)
         };
 
     case CLEAR_MODAL_WINDOWS:

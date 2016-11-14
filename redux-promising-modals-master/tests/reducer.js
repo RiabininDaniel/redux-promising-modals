@@ -31,8 +31,8 @@ describe('Modals reducer tests', () => {
         }, {
             type: types.PUSH_MODAL_WINDOW,
             payload: {
-                type: firstActionType,
-                props: firstActionProps
+                type: [].concat(firstActionType),
+                props: [].concat(firstActionProps)
             }
         }));
 
@@ -44,8 +44,8 @@ describe('Modals reducer tests', () => {
         }, {
             type: types.PUSH_MODAL_WINDOW,
             payload: {
-                type: secondActionType,
-                props: secondActionProps
+                type: [].concat(secondActionType),
+                props: [].concat(secondActionProps)
             }
         }));
     });

@@ -18,8 +18,8 @@ describe('Action creators tests', () => {
             expected: {
                 type: types.PUSH_MODAL_WINDOW,
                 payload: {
-                    type: actionType,
-                    props: actionProps
+                    type: [].concat(actionType),
+                    props: [].concat(actionProps)
                 }
             },
             get result() {
